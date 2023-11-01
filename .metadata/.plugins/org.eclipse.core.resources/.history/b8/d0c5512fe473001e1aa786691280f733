@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myweb.www.repository.BoardDAO">
+	<insert id="insert" parameterType="com.myweb.www.domain.BoardVO">
+		insert into board(title,
+		writer, content)
+		values(#{title},#{writer},#{content})
+	</insert>
+
+	<select id="list" resultType="com.myweb.www.domain.BoardVO">
+		SELECT * FROM board
+
+
+		<include refid="search"></include>
+
+		ORDER BY bno
+		DESC LIMIT #{pageStart}, #{qty}
+	</select>
+
+	<select id="detail" parameterType="int"
+		resultType="com.myweb.www.domain.BoardVO">
+		select * from board where bno=#{bno}
+	</select>
+
+
+	<update id="modify">
+		update board set title=#{title},
+		content=#{content},mod_at=now() where
+		bno=#{bno}
+
+
+	</update>
+
+	<update id="readCount">
+		update board set read_count=read_count+#{cnt} where
+		bno=#{bno}
+	</update>
+
+	<delete id="delete">
+		delete from board where bno=#{bno}
+	</delete>
+
+	<select id="totalCount" resultType="int">
+
+		select count(bno) from board
+
+
+		<include refid="search"></include>
+	</select>
+	
+	<select id="selectOneBno" resultType="long">
+	
+	select max(bno) from board</select>
+	
+	<update id="f_total" parameterType="com.myweb.www.domain.BoardVO">
+	update board set file_qty=(select count(uuid) from file where bno=#{bno}) 
+	where bno=#{bno}
+	</update>
+	<update id="c_total" parameterType="com.myweb.www.domain.BoardVO">
+	update board set cmt_qty=(select count(cmt) from comment where bno=#{bno}) 
+	where bno=#{bno}
+	</update>
+	
+	<select id="getDetail" parameterType="long" resultType="com.myweb.www.domain.BoardVO">
+	select * from board where bno=#{bno}
+	</select>
+
+	<sql id="search">
+		<if test="type!=null">
+			<trim prefix="where (" suffix=")" prefixOverrides="OR">
+
+				<foreach collection="typeToArrary" item="type">
+					<trim prefix="OR">
+						<choose>
+
+							<when test="type=='t'.toString()">
+
+								title like concat('%', #{keyword}, '%')
+							</when>
+							<when test="type=='c'.toString()">
+
+								content like concat('%', #{keyword}, '%')
+							</when>
+							<when test="type=='w'.toString()">
+
+								writer like concat('%', #{keyword}, '%')
+							</when>
+						</choose>
+
+
+					</trim>
+
+				</foreach>
+
+			</trim>
+
+		</if>
+
+	</sql>
+</mapper>

@@ -1,0 +1,65 @@
+package com.myweb.www.config;
+
+import javax.servlet.Filter;
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration;
+
+
+import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+public class webConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+	@Override
+	protected Class<?>[] getRootConfigClasses() {
+		// 
+		return new Class[] {RootConfig.class, ScurityConfig.class};
+	}
+
+	@Override
+	protected Class<?>[] getServletConfigClasses() {
+		// TODO Auto-generated method stub
+		return new 	Class[] {ServletConfiguration.class};
+	}
+
+	@Override
+	protected String[] getServletMappings() {
+		// TODO Auto-generated method stub
+		return new String[] {"/"};
+	}
+
+	@Override 
+	protected Filter[] getServletFilters() {
+		// 인코딩 필터(encoding filter) 설정
+		CharacterEncodingFilter encodingFileter = new CharacterEncodingFilter();
+		encodingFileter.setEncoding("UTF-8");
+		encodingFileter.setForceEncoding(true);  //나갈 때도 utf-8로 해줘!(외부로 나가는 데이터도 인코딩 설정)
+		// API 같은 경우  한글 파일이 깨질 수 있으므로  
+		
+		
+		
+		return new Filter[] {encodingFileter}; // 배열로 설정했으므로 배열로 나가야 한다.
+	}
+
+	@Override
+	protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+		//기타 등등을 설치하기 위해서(그외 기타 사용자 설정)
+		// 사용자 지정 익셉션 설정을 할것인지 처리
+		
+		registration.setInitParameter("throwExceptionIfNoHandlerFound", "true");
+		//사용자 입센션을 처리을 위해..(미리)
+		
+		//파일 업로드 설정
+		//경로, maxFileSize, maxReqSize, fileSizeThreshold
+		String uploadLoaction = "D:\\_myweb\\_java\\fileUpload";
+		int maxFileSize = 1024*1024*20; //20M
+		int maxReqSize = maxFileSize*2; //40M
+		int fileSizeThreshold= maxFileSize;//20M
+		MultipartConfigElement multipartConfig = new MultipartConfigElement(uploadLoaction, maxFileSize, maxReqSize, fileSizeThreshold);
+		registration.setMultipartConfig(multipartConfig);
+				
+	}
+	
+	
+
+}

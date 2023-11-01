@@ -1,0 +1,63 @@
+
+10월 18, 2023 15:50:26.519 NEW SESSION
+10월 18, 2023 15:50:26.519 [11836:11840:1018/155026.518:ERROR:device_event_log_impl.cc(225)] [15:50:26.518] Bluetooth: bluetooth_adapter_winrt.cc:1058 Getting Default Adapter failed.
+10월 18, 2023 16:16:54.15 [11836:11840:1018/161654.015:ERROR:device_event_log_impl.cc(225)] [16:16:54.014] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 18, 2023 16:17:52.899 [11836:11840:1018/161752.899:ERROR:device_event_log_impl.cc(225)] [16:17:52.898] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 18, 2023 16:19:02.807 [11836:11840:1018/161902.807:ERROR:device_event_log_impl.cc(225)] [16:19:02.807] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 18, 2023 17:53:34.590 [11836:11840:1018/175334.590:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+10월 18, 2023 17:53:48.339 [11836:11840:1018/175348.339:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+10월 18, 2023 17:55:58.832 [11836:11840:1018/175558.832:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+10월 18, 2023 17:56:19.942 [11836:11840:1018/175619.942:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+10월 18, 2023 18:07:46.336 [11836:11840:1018/180746.336:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+
+10월 18, 2023 19:19:39.580 NEW SESSION
+10월 18, 2023 19:19:39.580 [9864:19932:1018/191939.573:ERROR:device_event_log_impl.cc(225)] [19:19:39.573] Bluetooth: bluetooth_adapter_winrt.cc:1058 Getting Default Adapter failed.
+10월 18, 2023 19:27:35.414 [9864:19932:1018/192735.414:ERROR:device_event_log_impl.cc(225)] [19:27:35.416] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+
+10월 19, 2023 16:32:27.521 NEW SESSION
+10월 19, 2023 16:32:27.521 [11872:6840:1019/163227.518:ERROR:device_event_log_impl.cc(225)] [16:32:27.519] Bluetooth: bluetooth_adapter_winrt.cc:1058 Getting Default Adapter failed.
+10월 19, 2023 18:44:22.806 [11872:6840:1019/184422.805:ERROR:device_event_log_impl.cc(225)] [18:44:22.805] Bluetooth: bluetooth_adapter_winrt.cc:1058 Getting Default Adapter failed.
+10월 19, 2023 19:44:57.795 [11872:9572:1019/194457.795:ERROR:mcs_client.cc(750)] Received close command, resetting connection.
+
+10월 25, 2023 16:27:18.702 NEW SESSION
+10월 25, 2023 16:27:18.702 [3376:11064:1025/162718.701:ERROR:device_event_log_impl.cc(225)] [16:27:18.701] Bluetooth: bluetooth_adapter_winrt.cc:1058 Getting Default Adapter failed.
+10월 25, 2023 17:00:53.36 [3376:8608:1025/170053.036:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+10월 25, 2023 18:57:18.557 [3376:11064:1025/185718.557:ERROR:device_event_log_impl.cc(225)] [18:57:18.564] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 25, 2023 20:33:07.582 [3376:11064:1025/203307.582:ERROR:device_event_log_impl.cc(225)] [20:33:07.585] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+
+10월 27, 2023 17:45:01.84 NEW SESSION
+10월 27, 2023 17:45:01.84 [14316:13768:1027/174501.084:ERROR:cert_issuer_source_aia.cc(36)] Error parsing cert retrieved from AIA (as DER):
+10월 27, 2023 17:45:01.84 ERROR: Couldn't read tbsCertificate as SEQUENCE
+10월 27, 2023 17:45:01.84 ERROR: Failed parsing Certificate
+10월 27, 2023 17:45:01.84 
+10월 27, 2023 17:45:01.116 [14316:13768:1027/174501.116:ERROR:cert_verify_proc_builtin.cc(701)] CertVerifyProcBuiltin for sync.adotmob.com failed:
+10월 27, 2023 17:45:01.116 ----- Certificate i=0 (CN=sync.adotmob.com) -----
+10월 27, 2023 17:45:01.116 ERROR: Time is after notAfter
+10월 27, 2023 17:45:01.116 
+10월 27, 2023 17:45:01.116 
+10월 27, 2023 17:46:11.443 [14316:13768:1027/174611.443:ERROR:cert_verify_proc_builtin.cc(701)] CertVerifyProcBuiltin for cs.axis-marketplace.com failed:
+10월 27, 2023 17:46:11.443 ----- Certificate i=0 (CN=*.axis-marketplace.com) -----
+10월 27, 2023 17:46:11.458 ERROR: Time is after notAfter
+10월 27, 2023 17:46:11.458 
+10월 27, 2023 17:46:11.458 
+10월 27, 2023 18:12:33.189 [14316:2696:1027/181233.188:ERROR:device_event_log_impl.cc(225)] [18:12:33.179] Bluetooth: bluetooth_adapter_winrt.cc:1058 Getting Default Adapter failed.
+10월 27, 2023 18:15:04.817 [14316:13768:1027/181504.817:ERROR:cert_verify_proc_builtin.cc(701)] CertVerifyProcBuiltin for global.ib-ibi.com failed:
+10월 27, 2023 18:15:04.817 ----- Certificate i=0 (CN=*.ib-ibi.com,O=KBM Group LLC,L=Louisville,ST=Colorado,C=US) -----
+10월 27, 2023 18:15:04.817 ERROR: Time is after notAfter
+10월 27, 2023 18:15:04.817 
+10월 27, 2023 18:15:04.817 
+10월 27, 2023 19:30:06.52 [14316:2696:1027/193006.052:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+
+10월 30, 2023 16:33:37.792 NEW SESSION
+10월 30, 2023 16:33:37.792 [6060:11896:1030/163337.786:ERROR:device_event_log_impl.cc(225)] [16:33:37.776] Bluetooth: bluetooth_adapter_winrt.cc:1058 Getting Default Adapter failed.
+10월 30, 2023 18:10:54.276 [6060:11896:1030/181054.276:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+10월 30, 2023 18:20:46.782 [6060:11896:1030/182046.782:ERROR:device_event_log_impl.cc(225)] [18:20:46.797] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 30, 2023 21:19:35.494 [6060:11896:1030/211935.494:ERROR:device_event_log_impl.cc(225)] [21:19:35.486] Bluetooth: bluetooth_adapter_winrt.cc:1058 Getting Default Adapter failed.
+
+10월 31, 2023 16:13:05.632 NEW SESSION
+10월 31, 2023 16:13:05.632 [5196:3428:1031/161305.627:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+10월 31, 2023 16:13:08.800 [5196:3428:1031/161308.799:ERROR:device_event_log_impl.cc(225)] [16:13:08.798] Bluetooth: bluetooth_adapter_winrt.cc:1058 Getting Default Adapter failed.
+10월 31, 2023 21:15:35.819 [5196:3428:1031/211535.819:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint (unset) for first_image_paint 0.078 s
+10월 31, 2023 21:15:52.223 [5196:3428:1031/211552.223:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/components/utils/utils.js (1)
+10월 31, 2023 21:15:52.223 [5196:3428:1031/211552.223:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/components/utils/utils.js (1)
+10월 31, 2023 21:26:37.367 [5196:3428:1031/212637.367:ERROR:CONSOLE(1)] "Uncaught (in promise) RangeError: Invalid line number 105 in 1-line document", source: devtools://devtools/bundled/devtools-frontend/front_end/third_party/codemirror.next/chunk/codemirror.js (1)

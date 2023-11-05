@@ -20,4 +20,6 @@ public interface BoardDAO {
 
 	int remove(long bno);
 
+	long selectOneBno();
+
 }

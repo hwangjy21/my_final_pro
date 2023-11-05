@@ -28,5 +28,9 @@
    	<delete id="remove" parameterType="long">
    	delete from board where bno=#{bno}
    	</delete>
+   	
+   	<select id="selectOneBno" resultType="long">
+   	select max(bno) from board;
+   	</select>
     </mapper>
   

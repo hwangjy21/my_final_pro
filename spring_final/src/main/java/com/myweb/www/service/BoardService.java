@@ -2,21 +2,21 @@ package com.myweb.www.service;
 
 import java.util.List;
 
+import com.myweb.www.domain.BoardDTO;
 import com.myweb.www.domain.BoardVO;
-import com.myweb.www.domain.PagingVO;
 
 public interface BoardService {
 
-	int insert(BoardVO bvo);
+	int insert(BoardDTO boardDTO);
 
-	List<BoardVO> getList(PagingVO pgvo);
+	List<BoardVO> getList(BoardVO bvo);
 
-	BoardVO getDetil(long bno);
+	BoardDTO getDetil(long bno);
 
-	int modify(BoardVO bvo);
+
 
 	int remove(long bno);
 
-	int getTotalCount(PagingVO pgvo);
+	int modify(BoardDTO boardDTO);
 
 }

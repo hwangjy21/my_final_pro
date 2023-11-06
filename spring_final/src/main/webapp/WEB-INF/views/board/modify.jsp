@@ -69,7 +69,7 @@ button:hover {
 	<jsp:include page="../common/nav.jsp" />
 	<div class="container">
 		<h1>글 수정</h1>
-		<form action="/board/modify" method="post">
+		<form action="/board/modify" method="post" enctype="multipart/form-data">
 			<div class="container">
 				<h1>글 디테일</h1>
 				<c:set value="${bdto.bvo }" var="bvo"></c:set>
@@ -149,3 +149,4 @@ button:hover {
 	<jsp:include page="../common/footer.jsp" />
 </body>
 </html>
+

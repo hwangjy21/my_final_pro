@@ -37,4 +37,14 @@ public PagingHandler getList(long bno, PagingVO pgvo) {
 	PagingHandler ph = new PagingHandler(pgvo, totoalCount,list);
 	return ph;
 }
+@Override
+public int modify(CommentVO cvo) {
+	// TODO Auto-generated method stub
+	return cdao.update(cvo);
+}
+@Override
+public int remove(long cno) {
+	// TODO Auto-generated method stub
+	return cdao.delete(cno);
+}
 }

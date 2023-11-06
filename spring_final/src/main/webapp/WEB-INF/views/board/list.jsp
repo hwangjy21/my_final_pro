@@ -29,6 +29,8 @@ table {
 .container {
 	display: flex;
 	justify-content: center;
+	hight: 40%;
+	widows: 100%;
 }
 
 table, th, td {
@@ -76,6 +78,19 @@ a:hover {
 .button:hover {
 	background-color: #0056b3;
 }
+
+.nav_box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+
+  display: flex;
+  justify-content: center;
+  padding: 10px; 
+}
+
 </style>
 </head>
 <body>
@@ -148,6 +163,27 @@ a:hover {
 			</tbody>
 		</table>
 	</div>
+	<div class="nav_box">
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li class="page-item ${(ph.prev eq false)?'disabled':'' }"><a
+					class="page-link"
+					href="/board/list?pageNo=${ph.startPage-1 }&qty=${ph.pgvo.qty}&type=${ph.pgvo.type}&keyword=${ph.pgvo.keyword }">Previous</a></li>
+				<c:forEach begin="${ph.startPage }" end="${ph.endPage}" var="i">
+					<li class="page-item"><a class="page-link"
+						href="/board/list?pageNo=${i}&qty=${ph.pgvo.qty}&type=${ph.pgvo.type}&keyword=${ph.pgvo.keyword}">${i}</a></li>
+				</c:forEach>
 
+
+				<!-- 다음 -->
+				<li class="page-item ${(ph.next eq false) ? 'disabled' : '' }">
+					<a class="page-link"
+					href="/board/list?pageNo=${ph.endPage + 1 }&qty=${ph.pgvo.qty}&type=${ph.pgvo.type}&keyword=${ph.pgvo.keyword}">
+						Next</a>
+				</li>
+			</ul>
+		</nav>
+
+	</div>
 </body>
 </html>

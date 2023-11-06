@@ -1,2 +1,8 @@
 console.log("boardModify.js");
-async
+async function removeFileServer(uuid) {
+
+    try {
+
+        conset u
+    }
+}

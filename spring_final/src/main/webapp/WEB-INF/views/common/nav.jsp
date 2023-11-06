@@ -77,11 +77,11 @@
 			</div>
 		</nav>
 	</header>
-	<script type="text/javascript">
+<!-- 	<script type="text/javascript">
 document.getElementById('logoutLink').addEventListener('click',(e)=>{
 	e.preventDefault();
 	document.getElementById('logoutForm').submit();
 });
-</script>
+</script> -->
 </body>
 </html>

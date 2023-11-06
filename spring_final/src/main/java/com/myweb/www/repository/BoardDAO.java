@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.myweb.www.domain.BoardVO;
+import com.myweb.www.domain.PagingVO;
 
 public interface BoardDAO {
 
@@ -21,5 +22,9 @@ public interface BoardDAO {
 	int remove(long bno);
 
 	long selectOneBno();
+
+	int totalCount(PagingVO pgvo);
+
+	List<BoardVO> list(PagingVO pgvo);
 
 }

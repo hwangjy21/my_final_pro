@@ -15,4 +15,10 @@ public interface CommentDAO {
 
 	List<CommentVO> selectListPaging(@Param("bno") long bno, @Param("pgvo") PagingVO pgvo);
 
+	int update(CommentVO cvo);
+
+	int delete(long cno);
+
+	int removeCommentAll(long bno);
+
 }

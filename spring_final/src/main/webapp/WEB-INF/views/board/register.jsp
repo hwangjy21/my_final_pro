@@ -64,28 +64,21 @@ button:hover {
 	<jsp:include page="../common/nav.jsp" />
 	<div class="container">
 		<h1>글 작성</h1>
-		<form action="/board/register" method="post"  enctype="multipart/form-data">
+		<form action="/board/register" method="post">
 			<label for="title">제목:</label> <input type="text" id="title"
-				name="title"> <label for="title">작성자:</label> <input
-				type="text" id="writer" name="writer"> <label for="content">내용:</label>
-			<textarea id="content" name="content" rows="6"></textarea>
-			<div class="mb-3">
-				<input type="file" class="form-control" name="files" id="files"
-					style="display: none;" multiple="multiple">
-				<!-- input button trigger 용도의 button -->
-				<button type="button" id="trigger" class="btn btn-outline-primary">File
-					Upload</button>
-			</div>
-			<div class="mb-3" id="fileZone">
-				<!-- 첨부파일 표시될 영역 -->
-			</div>
-
-			<button type="submit" type="submit" class="btn btn-dark" id="regBtn">작성</button>
+				name="title" > 
+				<label for="title">작성자:</label> 
+				<input type="text" id="writer"
+				name="writer" > 
+				
+			<label for="content">내용:</label>
+			<textarea id="content" name="content" rows="6" ></textarea>
+			<button type="submit">작성</button>
 		</form>
 
 	</div>
-
-<script type="text/javascript" src="/resources/js/boardRegister.js"></script>
-	<jsp:include page="../common/footer.jsp" />
+	
+	
+		<jsp:include page="../common/footer.jsp" />
 </body>
 </html>

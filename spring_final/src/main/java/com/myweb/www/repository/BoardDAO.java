@@ -31,4 +31,6 @@ public interface BoardDAO {
 
 	int getListFile(BoardVO bvo);
 
+	String writer(long bno);
+
 }

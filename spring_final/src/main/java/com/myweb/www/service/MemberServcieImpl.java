@@ -1,10 +1,13 @@
 package com.myweb.www.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
 import com.myweb.www.repository.MemberDAO;
+import com.myweb.www.security.AuthVO;
 import com.myweb.www.security.MemberVO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -28,15 +31,39 @@ public class MemberServcieImpl implements MemberService {
 	}
 
 	@Override
-	public Object list() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<MemberVO> selectList() {
+		List<MemberVO> list = mdao.selctList();
+	for(MemberVO mvo : list) {
+		mvo.setAuthList(mdao.selectAuth(mvo.getEmail()));
+	}
+	return list;
+
 	}
 
 	@Override
-	public Object selectList() {
+	public MemberVO getdetail(String email) {
 		// TODO Auto-generated method stub
-		return null;
+		return mdao.getdetail(email);
 	}
+
+	@Override
+	public int modifyPwdEmpty(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return mdao.modifyPwdEmpty(mvo);
+	}
+
+	@Override
+	public int modify(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return mdao.modify(mvo);
+	}
+
+	@Override
+	public int remove(String email) {
+		// TODO Auto-generated method stub
+		return mdao.delete(email);
+	}
+
+
 
 }

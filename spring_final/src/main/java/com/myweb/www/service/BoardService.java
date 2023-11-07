@@ -24,5 +24,7 @@ public interface BoardService {
 
 	int remveFile(String uuid);
 
+	String getBoardWriter(long bno);
+
 }
 

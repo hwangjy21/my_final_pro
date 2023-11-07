@@ -38,26 +38,35 @@
 							<c:choose>
 								<c:when
 									test="${auths.stream().anyMatch(authVO -> authVO.auth.equals('ROLE_ADMIN')).get() }">
-									<li>${authNick }(${authEmail }/관리자)</li>
-									
+
 									<li class="nav-item"><a class="nav-link"
-										href="/member/list">멤버 리스트</a></li>
+										href="/member/modify?email=${authEmail}">${authNick}(${authEmail})님
+											정보 수정하기</a></li>
+									<li class="nav-item"><a class="nav-link"
+										href="/member/list">관리자용 멤버 리스트</a></li>
 								</c:when>
 								<c:otherwise>
 									<li class="nav-item"><a class="nav-link"
-										href="/member/modify?email=${authEmail}">${authNick}(${authEmail})님 정보 수정하기</a>
-									</li>
+										href="/member/modify?email=${authEmail}">${authNick}(${authEmail})님
+											정보 수정하기</a></li>
 								</c:otherwise>
 							</c:choose>
 							<li class="nav-item"><a class="nav-link"
 								href="/board/register">Board Reg</a></li>
+							<li class="nav-item"><a class="nav-link" href=""
+								id="logoutLink">LogOut</a></li>
+							<form action="/member/logout" method="post" id="logoutForm">
+								<input type="hidden" name="email" value="${authEmail }">
+
+							</form>
 						</sec:authorize>
 						<sec:authorize access="isAnonymous()">
 
 							<li class="nav-item"><a class="nav-link"
 								href="/member/register">회원가입</a></li>
-							
-						<li class="nav-item"><a class="nav-link" href="/member/login">로그인</a></li>
+
+							<li class="nav-item"><a class="nav-link"
+								href="/member/login">로그인</a></li>
 						</sec:authorize>
 					</ul>
 
@@ -65,11 +74,11 @@
 			</div>
 		</nav>
 	</header>
-	<!-- 	<script type="text/javascript">
+	<script type="text/javascript">
 document.getElementById('logoutLink').addEventListener('click',(e)=>{
 	e.preventDefault();
 	document.getElementById('logoutForm').submit();
 });
-</script> -->
+</script>
 </body>
 </html>

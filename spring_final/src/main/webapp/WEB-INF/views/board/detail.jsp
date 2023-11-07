@@ -85,11 +85,12 @@ button:hover {
 	<div class="container">
 		<h1>글 디테일</h1>
 		<c:set value="${bdto.bvo}" var="bvo"></c:set>
-		<input type="hidden" id="bno" name="bno" value="${bvo.bno}"> <label
-			for="title">제목:</label> <input type="text" id="title" name="title"
-			value="${bvo.title}" readonly="readonly"> <label for="title">작성자:</label>
-		<input type="text" id="writer" name="writer" value="${bvo.writer}"
-			readonly="readonly"> <label for="content">내용:</label>
+		<input type="hidden" id="bno" name="bno" value="${bvo.bno}">
+		<label for="title">제목:</label> <input type="text" id="title"
+			name="title" value="${bvo.title}" readonly="readonly"> <label
+			for="title">작성자:</label> <input type="text" id="writer" name="writer"
+			value="${bvo.writer}" readonly="readonly"> <label
+			for="content">내용:</label>
 		<textarea id="content" name="content" rows="6" readonly="readonly">${bvo.content}</textarea>
 
 		<div>
@@ -134,17 +135,17 @@ button:hover {
 
 		<div class="container_cmt">
 
-			<%-- <sec:authorize access="isAuthenticated()"> --%>
-			<%-- <sec:authentication property="principal.mvo.email" var="authEmail" /> --%>
-			<div class="input-group mb-3">
-				<span class="input-group-text" id="cmtWriter">익명</span> <input
-					type="text" class="form-control" placeholder="Test Comment"
-					id="cmtText" style="margin: 0;">
-				<button type="button" class="btn btn-success" id="cmtPostBtn">Post</button>
-			</div>
+			<sec:authorize access="isAuthenticated()">
+				<sec:authentication property="principal.mvo.email" var="authEmail" />
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="cmtWriter">${authEmail }</span>
+					<input type="text" class="form-control" placeholder="Test Comment"
+						id="cmtText" style="margin: 0;">
+					<button type="button" class="btn btn-success" id="cmtPostBtn">Post</button>
+				</div>
 
 
-			<%-- 	</sec:authorize> --%>
+			</sec:authorize>
 			<!-- 댓글 표시 라인 -->
 			<ul class="list-group list-group-flush" id="cmtListArea">
 				<li class="list-group-item">
@@ -160,16 +161,16 @@ button:hover {
 			<div>
 				<div>
 					<button type="button" id="moreBtn" data-page="1"
-						class="btn btn-outline-dark">MORE+</button>
+						class="btn btn-outline-dark" style="visibility: hidden;">MORE+</button>
 				</div>
 			</div>
 			<!-- 모달창 라인 -->
 			<div class="modal" id="myModal" tabindex="-1">
 				<div class="modal-dialog">
 					<div class="modal-content">
-					
+
 						<div class="modal-header">
-							<h5 class="modal-title">익명</h5>
+							<h5 class="modal-title">${authEmail }</h5>
 							<button type="button" class="btn-close" data-bs-dismiss="modal"
 								aria-label="Close"></button>
 						</div>
@@ -193,11 +194,28 @@ button:hover {
 		</div>
 
 	</div>
+	
 
-	<script>
-		let bnoVal = `<c:out value="${bdto.bvo.bno}" />`;
-		console.log(bnoVal);
-	</script>
+	
+
+<c:if test="${not empty isnot_m}">
+    <script>
+        alert("${isnot_m}");
+    </script>
+</c:if>
+<script>
+    let modBtn = document.getElementById('modBtn');
+    let delBtn = document.getElementById('delBtn');
+    let bnoVal = `<c:out value="${bdto.bvo.bno}" />`;
+    let authEmail = `<c:out value="${authEmail }" />`;
+    let writer = `<c:out value="${bvo.writer }" />`;
+
+    if (authEmail != writer) {
+        delBtn.style.display = "none"; 
+        modBtn.style.display = "none"; 
+    }
+</script>
+
 
 
 	<script type="text/javascript" src="/resources/js/boardComment.js"></script>

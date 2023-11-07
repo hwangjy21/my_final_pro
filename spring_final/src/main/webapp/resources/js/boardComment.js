@@ -94,8 +94,9 @@ function getCommentList(bno, page = 1) {
                 } else {
                     li += `<span class="badge rounded-pill text-bg-dark">(수정됨)${cvo.modAt}</span>`;
                 }
+                if(cvo.writer==authEmail){
                 li += `<button type="button" class="btn btn-outline-danger mod" data-bs-toggle="modal" data-bs-target="#myModal">e</button>`;
-                li += `<button type="button" class="btn btn-outline-warning del">x</button>`;
+                li += `<button type="button" class="btn btn-outline-warning del">x</button>`;}
                 li += `</li>`;
                 ul.innerHTML += li;
             }

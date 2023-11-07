@@ -3,8 +3,8 @@ document.getElementById('trigger').addEventListener('click', () => {
   document.getElementById('files').click();
 });
 
-const regExp = new RegExp("\\.(exe|sh|bat|js|msi|dll)$");
-const regExpImg = new RegExp("\\.(jpg|jpeg|png|gif)$");
+const regExp = new RegExp("\.(exe|sh|bat|js|msi|dll)$");
+const regExpImg = new RegExp("\.(jpg|jpeg|png|gif)$");
 
 const maxSize = 1023 * 1024 * 20;
 
@@ -17,9 +17,11 @@ function fileValidation(fileName, fileSize) {
     } else if (fileSize > maxSize) {
          console.log("들어2");
         return 0;
-    } else if (!regExpImg.test(fileName)) { // 이미지 파일이 아니면...
-         console.log("들어3");
-        return 0;
+    
+        
+     } else if (regExpImg.test(fileName)) { // 이미지 파일이면...
+        console.log("들어31");
+        return 1;
     } else { 
          console.log("실패");
         return 1;

@@ -136,3 +136,38 @@
 11월 06, 2023 07:29:30.839 [8312:3136:1106/072930.838:ERROR:sandbox_origin_database.cc(190)] SandboxOriginDatabase failed at: Init@storage\browser\file_system\sandbox_origin_database.cc:94 with error: IO error: C:\Users\�솴吏��쁺\AppData\Local\Google\Chrome\User Data\Default\File System\Origins/LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
 11월 06, 2023 07:29:36.902 [8312:3136:1106/072936.902:ERROR:sandbox_origin_database.cc(190)] SandboxOriginDatabase failed at: Init@storage\browser\file_system\sandbox_origin_database.cc:94 with error: IO error: C:\Users\�솴吏��쁺\AppData\Local\Google\Chrome\User Data\Default\File System\Origins/LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
 11월 06, 2023 07:29:42.971 [8312:3136:1106/072942.970:ERROR:sandbox_origin_database.cc(190)] SandboxOriginDatabase failed at: Init@storage\browser\file_system\sandbox_origin_database.cc:94 with error: IO error: C:\Users\�솴吏��쁺\AppData\Local\Google\Chrome\User Data\Default\File System\Origins/LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
+
+11월 08, 2023 24:54:29.296 NEW SESSION
+11월 08, 2023 24:54:29.296 [6124:21288:1108/005429.293:ERROR:persistent_memory_allocator.cc(890)] Corruption detected in shared-memory segment.
+11월 08, 2023 24:55:26.290 [6124:21288:1108/005526.290:ERROR:persistent_memory_allocator.cc(890)] Corruption detected in shared-memory segment.
+11월 08, 2023 24:55:31.295 [6124:21288:1108/005531.295:ERROR:persistent_memory_allocator.cc(890)] Corruption detected in shared-memory segment.
+11월 08, 2023 24:55:41.317 [6124:21288:1108/005541.317:ERROR:persistent_memory_allocator.cc(890)] Corruption detected in shared-memory segment.
+11월 08, 2023 24:55:46.324 [6124:21288:1108/005546.323:ERROR:persistent_memory_allocator.cc(890)] Corruption detected in shared-memory segment.
+11월 08, 2023 24:55:51.337 [6124:21288:1108/005551.336:ERROR:persistent_memory_allocator.cc(890)] Corruption detected in shared-memory segment.
+11월 08, 2023 01:02:43.831 [6124:18608:1108/010243.830:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 01:02:43.832 [6124:18608:1108/010243.830:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 01:08:23.657 [8796:4024:1108/010823.656:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 02:05:40.894 [18452:3688:1108/020540.894:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 02:16:03.53 [18452:3688:1108/021603.053:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 02:36:35.02 [1544:2456:1108/023635.001:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 02:45:15.192 [3800:16852:1108/024515.192:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 02:45:15.193 [3800:16852:1108/024515.192:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 02:56:02.90 [9068:18500:1108/025602.089:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 02:56:02.90 [9068:18500:1108/025602.089:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 02:56:07.716 [9068:18500:1108/025607.716:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 02:56:07.717 [9068:18500:1108/025607.716:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 02:56:14.914 [9068:18500:1108/025614.914:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 02:56:33.582 [9068:18500:1108/025633.581:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 03:14:31.769 [19848:12460:1108/031431.768:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 08, 2023 03:29:08.474 [19848:4908:1108/032908.474:ERROR:device_event_log_impl.cc(192)] [03:29:08.474] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+11월 08, 2023 04:10:48.849 [21444:12264:1108/041048.848:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_ABORTED)
+11월 08, 2023 04:46:48.967 [5608:1820:1108/044648.966:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 04:56:13.957 [5608:1820:1108/045613.956:ERROR:device_event_log_impl.cc(192)] [04:56:13.954] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+11월 08, 2023 05:01:26.126 [5608:2456:1108/050126.126:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 08, 2023 05:32:50.933 [20444:12144:1108/053250.932:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 05:32:53.669 [20444:12144:1108/053253.668:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 05:38:51.971 [11500:4396:1108/053851.971:ERROR:feature_processor_state.cc(40)] Processing error occured: model SearchUser failed with SqlQueryRunError, message: 
+11월 08, 2023 05:39:08.35 [11500:4396:1108/053908.035:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 08, 2023 05:39:15.21 [11500:17856:1108/053915.020:ERROR:sandbox_origin_database.cc(190)] SandboxOriginDatabase failed at: Init@storage\browser\file_system\sandbox_origin_database.cc:94 with error: IO error: C:\Users\�솴吏��쁺\AppData\Local\Google\Chrome\User Data\Default\File System\Origins/LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
+11월 08, 2023 05:39:21.89 [11500:17856:1108/053921.088:ERROR:sandbox_origin_database.cc(190)] SandboxOriginDatabase failed at: Init@storage\browser\file_system\sandbox_origin_database.cc:94 with error: IO error: C:\Users\�솴吏��쁺\AppData\Local\Google\Chrome\User Data\Default\File System\Origins/LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
+11월 08, 2023 06:02:58.592 [2668:8428:1108/060258.592:ERROR:feature_processor_state.cc(40)] Processing error occured: model SearchUser failed with SqlQueryRunError, message: 

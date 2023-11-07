@@ -58,6 +58,10 @@
 	where bno=#{bno}
 	</update>
 	
+	
+	<select id="writer" parameterType="long" resultType="String">
+	select writer from board where bno = #{bno}
+	</select>
 	<sql id="search">
 		<if test="type!=null">
 			<trim prefix="where (" suffix=")" prefixOverrides="OR">

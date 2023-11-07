@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,13 +64,16 @@ button:hover {
 
 	<jsp:include page="../common/header.jsp" />
 	<jsp:include page="../common/nav.jsp" />
+	<sec:authentication property="principal.mvo.email" var="auth"/>
 	<div class="container">
+	
 		<h1>글 작성</h1>
 		<form action="/board/register" method="post"
 			enctype="multipart/form-data">
+			
 			<label for="title">제목:</label> <input type="text" id="title"
 				name="title"> <label for="title">작성자:</label> <input
-				type="text" id="writer" name="writer"> <label for="content">내용:</label>
+				type="text" id="writer" name="writer" value="${auth }"> <label for="content">내용:</label>
 			<textarea id="content" name="content" rows="6"></textarea>
 			<div class="mb-3">
 				<input type="file" class="form-control" name="files" id="files"

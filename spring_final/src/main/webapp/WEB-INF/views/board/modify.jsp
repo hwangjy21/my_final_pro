@@ -67,8 +67,8 @@ button:hover {
 
 	<jsp:include page="../common/header.jsp" />
 	<jsp:include page="../common/nav.jsp" />
-	<div class="container">
-		<h1>글 수정</h1>
+	<div class="con		<h1>글 수정</h1>tainer">
+
 		<form action="/board/modify" method="post" enctype="multipart/form-data">
 			<div class="container">
 				<h1>글 디테일</h1>
@@ -146,6 +146,7 @@ button:hover {
 	</div>
 
 	<script type="text/javascript" src="/resources/js/boardRegister.js"></script>
+		<script type="text/javascript" src="/resources/js/boardModify.js"></script>
 	<jsp:include page="../common/footer.jsp" />
 </body>
 </html>

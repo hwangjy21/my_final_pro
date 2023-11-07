@@ -14,4 +14,6 @@ public interface FileDAO {
 
 	int removeFileAll(long bno);
 
+	List<FileVO> selectListAllFiles();
+
 }

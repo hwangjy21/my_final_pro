@@ -112,4 +112,10 @@ public class BoardServiceImpl implements BoardService {
 		
 		return fdao.removeFile(uuid);
 	}
+
+	@Override
+	public String getBoardWriter(long bno) {
+		// TODO Auto-generated method stub
+		return bdao.writer(bno);
+	}
 	}

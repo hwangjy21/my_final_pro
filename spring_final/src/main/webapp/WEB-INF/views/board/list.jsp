@@ -185,5 +185,12 @@ a:hover {
 		</nav>
 
 	</div>
+<c:if test="${not empty isnot_d}">
+    <script>
+        alert("${isnot_d}");
+    </script>
+</c:if>
+
+
 </body>
 </html>

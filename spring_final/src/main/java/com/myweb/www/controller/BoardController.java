@@ -1,5 +1,6 @@
 package com.myweb.www.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -75,26 +76,42 @@ public class BoardController {
 
     @PostMapping("/modify")
     public String modify(RedirectAttributes re, BoardVO bvo,
-            @RequestParam(name = "files", required = false) MultipartFile[] files) {
-
-        List<FileVO> flist = null;
-        if (files[0].getSize() > 0) {
-            flist = fh.uploadFiles(files);
-            log.info(">>>>>flist>>>>>flist" + flist);
+            @RequestParam(name="files", required = false) MultipartFile[] files, Principal principal) {
+        String username = principal.getName();
+        
+       
+        if (bvo.getWriter().equals(username)) {
+            List<FileVO> flist = null;
+            if (files != null && files.length > 0 && files[0].getSize() > 0) {
+                flist = fh.uploadFiles(files);
+            }
+            
+            int isOk = bsv.modify(new BoardDTO(bvo, flist));
+            re.addAttribute("bno", bvo.getBno());
+            re.addAttribute("writer", bvo.getWriter());
+            re.addFlashAttribute("isMod", isOk);
+        } else {
+       
         }
-
-        int isOk = bsv.modify(new BoardDTO(bvo, flist));
-        re.addAttribute("bno", bvo.getBno());
-        re.addAttribute("isMod", isOk);
-        return "redirect:/board/detail";
+        
+        return "redirect:/board/detail"; 
     }
-
-    @GetMapping("remove")
-    public String remove(RedirectAttributes re, @RequestParam("bno") long bno) {
-        int remove = bsv.remove(bno);
-        re.addFlashAttribute("isDel", remove);
+    @GetMapping("/remove")
+    public String remove(RedirectAttributes re, @RequestParam("bno") long bno, Principal principal) {
+        String username = principal.getName();
+        
+      
+        String writer = bsv.getBoardWriter(bno); 
+        if (writer != null && writer.equals(username)) {
+            int isDel = bsv.remove(bno);
+            re.addFlashAttribute("isDel", isDel);
+        } else {
+            re.addFlashAttribute("isnot_d", "본인만 삭제할 수 있어요!.");
+        }
+        
         return "redirect:/board/list";
     }
+
     
     @DeleteMapping(value="/file/{uuid}", produces = MediaType.TEXT_PLAIN_VALUE )
     public ResponseEntity<String> removeFile(@PathVariable("uuid")String uuid){

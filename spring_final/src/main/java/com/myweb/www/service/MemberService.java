@@ -1,5 +1,7 @@
 package com.myweb.www.service;
 
+import java.util.List;
+
 import com.myweb.www.security.MemberVO;
 
 public interface MemberService {
@@ -8,8 +10,16 @@ public interface MemberService {
 
 	int register(MemberVO mvo);
 
-	Object list();
 
-	Object selectList();
+
+	List<MemberVO> selectList();
+
+	MemberVO  getdetail(String email);
+
+	int modifyPwdEmpty(MemberVO mvo);
+
+	int modify(MemberVO mvo);
+
+	int remove(String email);
 
 }

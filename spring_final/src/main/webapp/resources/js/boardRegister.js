@@ -1,59 +1,60 @@
-console.log("boardRegister.js in~!!!!!!");
-document.getElementById('trigger').addEventListener('click', () => {
-  document.getElementById('files').click();
+
+// 트리거 버튼 처리
+document.getElementById('trigger').addEventListener('click',()=>{
+    document.getElementById('files').click();
 });
 
-const regExp = new RegExp("\.(exe|sh|bat|js|msi|dll)$");
-const regExpImg = new RegExp("\.(jpg|jpeg|png|gif)$");
+//실행파일, 이미지 파일에대한 정규표현식 작성
+const regExp = new RegExp("\.(exe|sh|bat|js|msi|dll)$"); //실행파일 막기
+const regExpImg = new RegExp("\.(jpg|jpeg|png|gif)$"); //이미지 파일만 
+const maxSize = 1024*1024*20; //파일 최대 사이즈
 
-const maxSize = 1023 * 1024 * 20;
-
-function fileValidation(fileName, fileSize) {
-    if (regExp.test(fileName)) { // 실행 파일이면...
-    
-         console.log("들어옴1");
+function fileValidation(fileName, fileSize){
+ 
+    if(regExp.test(fileName)){
         return 0;
-   
-    } else if (fileSize > maxSize) {
-         console.log("들어2");
+    }else if(fileSize > maxSize){
         return 0;
-    
-        
-     } else if (regExpImg.test(fileName)) { // 이미지 파일이면...
-        console.log("들어31");
-        return 1;
-    } else { 
-         console.log("실패");
+    }else if(!regExpImg.test(fileName)){
+       console.log("들어오지마");
+        return 0;      
+    }else {
         return 1;
     }
 }
 
+document.addEventListener('change',(e)=>{
+    if(e.target.id == 'files'){
+        //파일을 다시 추가할 때는 버튼 상태를 원래대로 변경
+        document.getElementById('regBtn').disabled = false;
+        
+        //input file element에 저장된 file의 정보를 가저오는 property 
+        const fileObj = document.getElementById('files').files;
+        console.log(fileObj);
 
-document.addEventListener('change', (e) => {
-  if (e.target.id == 'files') {
-    document.getElementById('regBtn').disabled = false;
-    const fileObj = document.getElementById('files').files;
-    console.log(fileObj);
+        //첨부파일에 대한 정보를 fileZone에 기록
+        let div = document.getElementById('fileZone');
+        //기존 값이 있다면 삭제
+        div.innerHTML="";
+        //ul => li로 첨부파일 추가
+        //<ul class="list-group list-group-flush">
+        //<li class="list-group-item">An item</li>
+        let isOk = 1; //여러 파일이 모두 검증에 통과해야 하기 때문에 * 로 각 파일마다 통과여부 확인
+        let ul=`<ul class="list-group list-group-flush">`;
+            for(let file of fileObj){
+                let vaildResult = fileValidation(file.name, file.size); //0 또는 1로 리턴
+                isOk *= vaildResult;
+                ul+= `<li class="list-group-item d-flex justify-content-between align-items-start">`;
+                ul+= `<div class="ms-2 me-auto">`;
+                ul+= `${vaildResult ? '<div class="fw-bold">업로드 가능</div>' : '<div class="fw-bold text-danger">업로드 불가능</div>'}`;
+                ul+= `${file.name}</div>`;
+                ul+= `<span class="badge rounded-pill text-bg-${vaildResult ? 'success':'danger'}">${file.size}Bypes</span></li>`;
+            }
+            ul +=`</ul>`;
+            div.innerHTML = ul;
 
-    let div = document.getElementById('fileZone');
-    div.innerHTML = "";
-
-    let isOk = 1;
-    let ul = `<ul class="list-group list-group-flush">`;
-    for (let file of fileObj) {
-      let validResult = fileValidation(file.name, file.size); // 수정: 오타 수정
-      isOk *= validResult;
-      ul += `<li class="list-group-item d-flex justify-content-between align-items-start">`;
-      ul += `<div class="ms-2 me-auto">`;
-      ul += `${validResult ? '<div class="fw-bold">업로드 가능</div>' : '<div class="fw-bold text-danger">업로드 불가능</div>'}`;
-      ul += `${file.name}</div>`;
-      ul += `<span class="badge rounded-pill text-bg-${validResult ? 'success' : 'danger'}">${file.size}Bytes</span></li>`; // 수정: 변수명 수정
+            if(isOk == 0){
+                document.getElementById('regBtn').disabled = true;
+            }
     }
-    ul += `</ul>`;
-    div.innerHTML = ul;
-
-    if (isOk == 0) {
-      document.getElementById('regBtn').disabled = true;
-    }
-  }
-});
+})

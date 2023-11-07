@@ -27,4 +27,8 @@ public interface BoardDAO {
 
 	List<BoardVO> list(PagingVO pgvo);
 
+	int getListComment(BoardVO bvo);
+
+	int getListFile(BoardVO bvo);
+
 }

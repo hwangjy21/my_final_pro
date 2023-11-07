@@ -26,50 +26,38 @@
 							aria-current="page" href="/">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="/board/list">Board
 								List</a></li>
-						<li class="nav-item"><a class="nav-link" href="/board/register">Board
-								Register</a></li>
-						<!-- 현재 인증한 사용자의 정보를 가져와서 해당 권한이 있는 케이스를 open -->
-						<!-- 사용자 정보는 principal -->
-						<!-- admin 계정만 할 수 있는 일을 처리 -->
-						<!-- anyMatch() : stream 매칭메서드 (최소한 한개의 요소가 주어진 조건에 맞는지 조사) -->
 
 						<sec:authorize access="isAuthenticated()">
+
 
 							<sec:authentication property="principal.mvo.email"
 								var="authEmail" />
 							<sec:authentication property="principal.mvo.nickName"
 								var="authNick" />
 							<sec:authentication property="principal.mvo.authList" var="auths" />
-
 							<c:choose>
 								<c:when
-									test="${auths.stream().anyMatch(authVO -> authVO.auth.equals('ROLE_ADMIN')).get()}">
+									test="${auths.stream().anyMatch(authVO -> authVO.auth.equals('ROLE_ADMIN')).get() }">
+									<li>${authNick }(${authEmail }/관리자)</li>
+									
 									<li class="nav-item"><a class="nav-link"
-										href="/member/list">${authNick }(${authEmail }/ADMIN)</a></li>
+										href="/member/list">멤버 리스트</a></li>
 								</c:when>
 								<c:otherwise>
 									<li class="nav-item"><a class="nav-link"
-										href="/member/modify?email=${authEmail }">${authNick }(${authEmail })</a>
+										href="/member/modify?email=${authEmail}">${authNick}(${authEmail})님 정보 수정하기</a>
 									</li>
 								</c:otherwise>
 							</c:choose>
-
 							<li class="nav-item"><a class="nav-link"
 								href="/board/register">Board Reg</a></li>
-							<!-- 로그인 해야 open 되는 메뉴들... -->
-							<li class="nav-item"><a class="nav-link" href=""
-								id="logoutLink">LogOut</a></li>
-							<form action="/member/logout" method="post" id="logoutForm">
-								<input type="hidden" name="email" value="${authEmail }">
-
-							</form>
 						</sec:authorize>
-						<!-- 아직 로그인 전 상태에서 open 되어야 할 메뉴 -->
 						<sec:authorize access="isAnonymous()">
+
 							<li class="nav-item"><a class="nav-link"
-								href="/member/register">SignUp</a></li>
-							<li class="nav-item"><a class="nav-link"
-								href="/member/login">LogIn</a></li>
+								href="/member/register">회원가입</a></li>
+							
+						<li class="nav-item"><a class="nav-link" href="/member/login">로그인</a></li>
 						</sec:authorize>
 					</ul>
 
@@ -77,7 +65,7 @@
 			</div>
 		</nav>
 	</header>
-<!-- 	<script type="text/javascript">
+	<!-- 	<script type="text/javascript">
 document.getElementById('logoutLink').addEventListener('click',(e)=>{
 	e.preventDefault();
 	document.getElementById('logoutForm').submit();

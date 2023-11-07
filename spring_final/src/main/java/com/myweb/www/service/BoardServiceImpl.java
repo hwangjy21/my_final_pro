@@ -49,8 +49,13 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<BoardVO> getList(PagingVO pgvo) {
-	
-		return bdao.list(pgvo);
+	List<BoardVO> list = bdao.list(pgvo);
+	for(BoardVO bvo : list) {
+		bdao.getListComment(bvo);
+		bdao.getListFile(bvo);
+		
+	}
+		return list;
 	}
 
 	/*

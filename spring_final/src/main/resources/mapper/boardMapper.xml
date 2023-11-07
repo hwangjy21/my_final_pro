@@ -43,6 +43,20 @@
 
 	<select id="selectOneBno" resultType="long"> select max(bno) from
 		board; </select>
+		
+		
+	<update id="getListComment">
+	update board  set cmt_qty=(
+	select count(cno) from comment where bno=#{bno})
+	where bno=#{bno}
+	</update>
+	
+			
+	<update id="getListFile">
+	update  board  set file_qty=(
+	select count(uuid) from file where bno=#{bno})
+	where bno=#{bno}
+	</update>
 	
 	<sql id="search">
 		<if test="type!=null">

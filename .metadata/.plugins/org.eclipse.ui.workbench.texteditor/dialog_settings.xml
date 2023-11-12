@@ -8,21 +8,21 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value=".element"/>
+			<item value="element"/>
+			<item value="elemenT"/>
+			<item value=" scss-docs-start accordion-css-vars"/>
+			<item value=".accordion"/>
+			<item value="&lt;!-- Sidebar --&gt;"/>
+			<item value="NAV"/>
+			<item value="&lt;ul class=&quot;navbar-nav bg-gradient-primary sidebar sidebar-dark accordion&quot; id=&quot;accordionSidebar&quot;&gt;"/>
+			<item value="Sidebar"/>
+			<item value="sid"/>
+			<item value="nav"/>
 			<item value="removeCommentAll"/>
 			<item value="&gt;&gt;&gt;&gt;&gt;flist"/>
 			<item value="1"/>
 			<item value="fvo.setFileType(1);"/>
-			<item value="  fvo.setFileType(1);"/>
-			<item value="    fvo.setFileType(1);"/>
-			<item value="&#x09;&#x09;&#x09;&#x09;log.info(&quot;&gt;&gt;&gt; file 생성 오류~!!&quot;);"/>
-			<item value="&gt;&gt;&gt;&gt;&gt;bvo&gt;&gt;files&gt;&gt;"/>
-			<item value="&gt;&gt;&gt;&gt; original "/>
-			<item value="uuid"/>
-			<item value="uui"/>
-			<item value="&gt;&gt;&gt;&gt; cno /: cvo "/>
-			<item value="ses"/>
-			<item value="&gt;&gt;&gt;&gt;&gt;writer/email"/>
-			<item value="&gt;&gt;&gt;&gt;&gt;writer/emaiㅣ"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
@@ -31,8 +31,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="541"/>
-		<item key="DIALOG_Y_ORIGIN" value="264"/>
+		<item key="DIALOG_X_ORIGIN" value="1200"/>
+		<item key="DIALOG_Y_ORIGIN" value="222"/>
 		<item key="DIALOG_WIDTH" value="340"/>
 		<item key="DIALOG_HEIGHT" value="454"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

@@ -1,0 +1,48 @@
+.nav_header {
+    background-color: white;
+    height: 5%;
+    color: rgb(19, 151, 213);
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05); 
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.icon_div {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	width: 5%;
+}
+
+.writer_div {
+	margin-right: 3%;
+}
+
+.c_logo {
+	display: flex;
+	align-items: center;
+	width: 3%;
+	margin-top: 3px;
+	margin-right: 2%;
+}
+
+.writer_div:hover {
+	color: black;
+}
+
+.icon_div:hover {
+	color: black;
+}
+
+.c_logo img {
+	width: 90%;
+	height: 90%;
+	margin-right: 3%;
+	margin-top: 1%;
+}
